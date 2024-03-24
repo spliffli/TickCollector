@@ -9,8 +9,9 @@ class Program
     {
         var logger = new FileLogger("log.txt", logToConsole: true);
         var config = new MTConfiguration("C:\\Users\\Jonathon\\source\\repos\\TickCollector\\TickCollector\\mt4ConfigExample.ini");
-        var mt4EventHandler = new MTEventHandler(config, logger);
-        var fpMarketsLiveSessionController = new MTSessionController(config, mt4EventHandler, logger);
+        var mt4EventHandler = new MTEventHandler(logger);
+        var mt4Client = new MTConnectionClient(config, mt4EventHandler, logger);
+        var fpMarketsLiveSessionController = new MTSessionController(config, mt4Client, logger);
 
 
         var tickCollector = new TickCollector(fpMarketsLiveSessionController, logger);

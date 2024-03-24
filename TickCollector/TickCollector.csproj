@@ -8,9 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="TradingApis">
-      <HintPath>..\..\TradingApis\TradingApis\bin\Debug\net8.0\TradingApis.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\TradingApis\TradingApis\TradingApis.csproj" />
   </ItemGroup>
 
 </Project>
